@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thin Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet" media="screen" />
+<link href="css/thin-admin.css" rel="stylesheet" media="screen" />
+<link href="css/font-awesome.css" rel="stylesheet" media="screen" />
+<link href="style/style.css" rel="stylesheet" />
+<link href="style/dashboard.css" rel="stylesheet" />
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<div class="container">
+  <div class="top-navbar header b-b"> <a data-original-title="Toggle navigation" class="toggle-side-nav pull-left" href="#"><i class="icon-reorder"></i> </a>
+    <div class="brand pull-left"> <a href="index.html"><img src="images/logo.png" width="147" height="33" /></a></div>
+    <ul class="nav navbar-nav navbar-right  hidden-xs">
+      <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-warning-sign"></i> <span class="badge">5</span> </a>
+        <ul class="dropdown-menu extended notification">
+          <li class="title">
+            <p>You have 5 new notifications</p>
+          </li>
+          <li> <a href="#"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">New user registration.</span> <span class="time">1 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-danger"><i class="icon-warning-sign"></i></span> <span class="message">High CPU load on cluster #2.</span> <span class="time">5 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-success"><i class="icon-plus"></i></span> <span class="message">New user registration.</span> <span class="time">10 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-info"><i class="icon-bullhorn"></i></span> <span class="message">New items are in queue.</span> <span class="time">25 mins</span> </a> </li>
+          <li> <a href="#"> <span class="label label-warning"><i class="icon-bolt"></i></span> <span class="message">Disk space to 85% full.</span> <span class="time">35 mins</span> </a> </li>
+          <li class="footer"> <a href="#">View all notifications</a> </li>
+        </ul>
+      </li>
+      <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-tasks"></i> <span class="badge">7</span> </a>
+        <ul class="dropdown-menu extended notification">
+          <li class="title">
+            <p>You have 7 pending tasks</p>
+          </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Preparing new release</span> <span class="percent">30%</span> </span>
+            <div class="progress progress-small">
+              <div class="progress-bar progress-bar-info" style="width: 30%;"></div>
+            </div>
+            </a> </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Change management</span> <span class="percent">80%</span> </span>
+            <div class="progress progress-small progress-striped active">
+              <div class="progress-bar progress-bar-danger" style="width: 80%;"></div>
+            </div>
+            </a> </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Mobile development</span> <span class="percent">60%</span> </span>
+            <div class="progress progress-small">
+              <div class="progress-bar progress-bar-success" style="width: 60%;"></div>
+            </div>
+            </a> </li>
+          <li> <a href="#"> <span class="task"> <span class="desc">Database migration</span> <span class="percent">20%</span> </span>
+            <div class="progress progress-small">
+              <div class="progress-bar progress-bar-warning" style="width: 20%;"></div>
+            </div>
+            </a> </li>
+          <li class="footer"> <a href="#">View all tasks</a> </li>
+        </ul>
+      </li>
+      <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-envelope"></i> <span class="badge">1</span> </a>
+        <ul class="dropdown-menu extended notification">
+          <li class="title">
+            <p>You have 3 new messages</p>
+          </li>
+          <li> <a href="#"> <span class="photo"> <img src="images/profile.png" width="34" height="34" /></span> <span class="subject"> <span class="from">John Doe</span> <span class="time">Just Now</span> </span> <span class="text"> Consetetur sadipscing elitr... </span> </a> </li>
+          <li> <a href="#"> <span class="photo"><img src="images/profile.png" width="34" height="34" /></span> <span class="subject"> <span class="from">John Doe</span> <span class="time">35 mins</span> </span> <span class="text"> Sed diam nonumy... </span> </a> </li>
+          <li> <a href="#"> <span class="photo"><img src="images/profile.png" width="34" height="34" /></span> <span class="subject"> <span class="from">John Doe</span> <span class="time">5 hours</span> </span> <span class="text"> No sea takimata sanctus... </span> </a> </li>
+          <li class="footer"> <a href="#">View all messages</a> </li>
+        </ul>
+      </li>
+      <li class="dropdown user  hidden-xs"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-male"></i> <span class="username">John Doe</span> <i class="icon-caret-down small"></i> </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+          <li><a href="#"><i class="icon-calendar"></i> My Calendar</a></li>
+          <li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="icon-key"></i> Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+        <form role="search" class="navbar-form pull-right" id="search-form" />
+                    <input type="search" placeholder="Search..." class="search-query" id="search-input" />
+                </form>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="left-nav">
+    <div id="side-nav">
+      <ul id="nav">
+        <li> <a href="index.html"> <i class="icon-dashboard"></i> Dashboard </a> </li>
+        <li> <a href="#"> <i class="icon-desktop"></i> UI Features <span class="label label-info pull-right">7</span> <i class="arrow icon-angle-left"></i></a>
+          <ul class="sub-menu opened">
+            <li> <a href="buttons.html"> <i class="icon-angle-right"></i> Buttons </a> </li>
+            <li class="current"> <a href="tabs.html"> <i class="icon-angle-right"></i> Tabs</a> </li>
+            <li> <a href="accordions.html"> <i class="icon-angle-right"></i> Accordions </a> </li>
+            <li> <a href="nestable.html"> <i class="icon-angle-right"></i> Nestable List </a> </li>
+            <li> <a href="icons.html"> <i class="icon-angle-right"></i> Icons </a> </li>
+            <li> <a href="grid.html"> <i class="icon-angle-right"></i> Grid </a> </li>
+            <li> <a href="dialogs.html"> <i class="icon-angle-right"></i> Dialogs </a> </li>
+          </ul>
+        </li>
+        <li> <a href="form.html"> <i class="icon-edit"></i> Form Elements</a></li>
+        <li> <a href="table.html"> <i class="icon-table"></i> Tables</a> </li>
+        <li> <a href="chart.html"> <i class="icon-bar-chart"></i> Charts &amp; Statistics </a> </li>
+        <li> <a href="gallery.html"> <i class="icon-picture"></i> Gallery </a> </li>
+        <li> <a href="#"> <i class="icon-folder-open-alt"></i> Pages <span class="label label-info pull-right">4</span> <i class="arrow icon-angle-left"></i></a>
+          <ul class="sub-menu">
+            <li> <a href="login.html"> <i class="icon-angle-right"></i> Login </a> </li>
+            <li> <a href="user_profile.html"> <i class="icon-angle-right"></i> User Profile </a> </li>
+            <li> <a href="fullCalendar.html"> <i class="icon-angle-right"></i> Calendar </a> </li>
+            <li> <a href="404-page.html"> <i class="icon-angle-right"></i> 404-page </a> </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-title">Tabs <small>Tabs-enabled widget and more</small></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-arrow-down"></i>
+              <h3>Tabs inside of the body</h3>
+            </div>
+            <div class="widget-content">
+              <div class="body">
+                <ul class="nav nav-tabs" id="myTab">
+                  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                  <li class=""><a data-toggle="tab" href="#profile">Profile</a></li>
+                  <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a data-toggle="tab" href="#dropdown3">@fat</a></li>
+                      <li><a data-toggle="tab" href="#dropdown4">@mdo</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div id="home" class="tab-pane fade active in">
+                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                  </div>
+                  <div id="profile" class="tab-pane fade">
+                    <p>Light Blue - is a next generation admin template based on the latest Metro design. There are few reasons we want to tell you, why we have created it:
+                      We didn't like the darkness of most of admin templates, so we created this light one. We didn't like the high contrast of most of admin templates, so we created this unobtrusive one.
+                      We searched for a solution of how to make widgets look like real widgets, so we decided that deep background - is what makes widgets look real.</p>
+                  </div>
+                  <div id="dropdown3" class="tab-pane fade">
+                    <p>Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                  </div>
+                  <div id="dropdown4" class="tab-pane fade">
+                    <p>They sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-arrow-up"></i>
+              <h3>Tabs on the bottom</h3>
+            </div>
+            <div class="widget-content">
+              <div class="body">
+                <div class="tabbable tabs-below">
+                  <div class="tab-content" id="myTabContentbottom">
+                    <div id="home-bottom" class="tab-pane fade">
+                      <p>Light Blue - is a next generation admin template based on the latest Metro design. There are few reasons we want to tell you, why we have created it:
+                        We didn't like the darkness of most of admin templates, so we created this light one. We didn't like the high contrast of most of admin templates, so we created this unobtrusive one.
+                        We searched for a solution of how to make widgets look like real widgets, so we decided that deep background - is what makes widgets look real.</p>
+                    </div>
+                    <div id="profile-bottom" class="tab-pane fade">
+                      <p>Food truck fixie locavore, single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown.</p>
+                    </div>
+                    <div id="dropdown3-bottom" class="tab-pane fade in active">
+                      <p>Why don't use Lore Ipsum? I think if some one says don't use lore ipsum it's very controversial point. I think the opposite actually. Everyone knows what is lore ipsum - it is
+                        easy to understand if text is lore ipsum. You'll automatically skip - because you know - it's just non-informative stub. But what if there some text like this one? You start to read it!
+                        But the goal of this text is different. So a bit of Lore Ipsum is always great practice</p>
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs " id="myTabbottom">
+                    <li><a data-toggle="tab" href="#home-bottom">Home</a></li>
+                    <li><a data-toggle="tab" href="#profile-bottom">Profile</a></li>
+                    <li class="active"><a data-toggle="tab" href="#dropdown3-bottom">Search</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-arrow-right"></i>
+              <h3>Tabs on the left</h3>
+            </div>
+            <div class="widget-content">
+              <div class="body">
+                <div class="tabbable tabs-left">
+                  <ul class="nav nav-tabs" id="myTabLeft">
+                    <li><a data-toggle="tab" href="#home-left">Home</a></li>
+                    <li class="active"><a data-toggle="tab" href="#profile-left">Profile</a></li>
+                    <li><a data-toggle="tab" href="#dropdown3-left">Search</a></li>
+                  </ul>
+                  <div class="tab-content" id="myTabContentLeft">
+                    <div id="home-left" class="tab-pane fade">
+                      <p>Light Blue - is a next generation admin template based on the latest Metro design. There are few reasons we want to tell you, why we have created it:
+                        We didn't like the darkness of most of admin templates, so we created this light one. We didn't like the high contrast of most of admin templates, so we created this unobtrusive one.
+                        We searched for a solution of how to make widgets look like real widgets, so we decided that deep background - is what makes widgets look real.</p>
+                    </div>
+                    <div id="profile-left" class="tab-pane fade in active">
+                      <p>Why don't use Lore Ipsum? I think if some one says don't use lore ipsum it's very controversial point. I think the opposite actually. Everyone knows what is lore ipsum - it is
+                        easy to understand if text is lore ipsum. You'll automatically skip - because you know - it's just non-informative stub. But what if there some text like this one? You start to read it!
+                        But the goal of this text is different. So a bit of Lore Ipsum is always great practice</p>
+                    </div>
+                    <div id="dropdown3-left" class="tab-pane fade">
+                      <p>Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-arrow-left"></i>
+              <h3> Tabs on the right</h3>
+            </div>
+            <div class="widget-content">
+              <div class="body">
+                <div class="tabbable tabs-right">
+                  <ul class="nav nav-tabs" id="myTabright">
+                    <li><a data-toggle="tab" href="#home-right">Home</a></li>
+                    <li class="active"><a data-toggle="tab" href="#profile-right">Profile</a></li>
+                    <li><a data-toggle="tab" href="#dropdown3-right">Search</a></li>
+                  </ul>
+                  <div class="tab-content" id="myTabContentright">
+                    <div id="home-right" class="tab-pane fade">
+                      <p>Why don't use Lore Ipsum? I think if some one says don't use lore ipsum it's very controversial point. I think the opposite actually. Everyone knows what is lore ipsum - it is
+                        easy to understand if text is lore ipsum. You'll automatically skip - because you know - it's just non-informative stub. But what if there some text like this one? You start to read it!
+                        But the goal of this text is different. So a bit of Lore Ipsum is always great practice.</p>
+                    </div>
+                    <div id="profile-right" class="tab-pane fade in active">
+                      <p>Light Blue - is a next generation admin template based on the latest Metro design. There are few reasons we want to tell you, why we have created it:
+                        We didn't like the darkness of most of admin templates, so we created this light one. We didn't like the high contrast of most of admin templates, so we created this unobtrusive one.
+                        We searched for a solution of how to make widgets look like real widgets, so we decided that deep background - is what makes widgets look real.</p>
+                    </div>
+                    <div id="dropdown3-right" class="tab-pane fade">
+                      <p>Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-nav footer"> 2013 &copy; Thin Admin by Riaxe Systems. </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/smooth-sliding-menu.js"></script>
+</body>
+</html>

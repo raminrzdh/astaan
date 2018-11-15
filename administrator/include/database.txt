@@ -1,0 +1,348 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.1.6
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 19, 2014 at 12:31 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `astaan`
+--
+
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+--
+-- Table structure for table `tbl_contact`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) COLLATE utf8_persian_ci NOT NULL,
+  `email` text COLLATE utf8_persian_ci NOT NULL,
+  `text` mediumtext COLLATE utf8_persian_ci NOT NULL,
+  `date` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=7 ;
+
+
+--
+-- Table structure for table `tbl_category`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_fa` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `name_en` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tbl_category`
+--
+
+INSERT INTO `tbl_category` (`id`, `name_fa`, `name_en`) VALUES
+(1, 'اقتصادی', 'accounting'),
+(2, 'اجتماعی', 'social');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_comment`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_id` int(11) NOT NULL,
+  `subfile_id` int(11) NOT NULL,
+  `text` mediumtext COLLATE utf8_persian_ci NOT NULL,
+  `date` text COLLATE utf8_persian_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `down` int(11) NOT NULL,
+  `up` int(11) NOT NULL,
+  `pic` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tbl_comment`
+--
+
+INSERT INTO `tbl_comment` (`id`, `file_id`, `subfile_id`, `text`, `date`, `status`, `down`, `up`, `pic`) VALUES
+(1, 38, 1, 'تتتتتتتتتتتتتتتتت', '1393/12/12', 0, 12, 33, 'none.jpg'),
+(2, 38, 1, 'شششششششششششششششش', '1393/12/12', 1, 12, 33, 'none.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_comment_vote`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_comment_vote` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` text COLLATE utf8_persian_ci NOT NULL,
+  `c_id` text COLLATE utf8_persian_ci NOT NULL,
+  `ip_date` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_expert`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_expert` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `family` varchar(150) COLLATE utf8_persian_ci NOT NULL,
+  `email` text COLLATE utf8_persian_ci NOT NULL,
+  `skill` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `education` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `pic` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `tbl_expert`
+--
+
+INSERT INTO `tbl_expert` (`id`, `name`, `family`, `email`, `skill`, `education`, `pic`) VALUES
+(1, 'مهدی', 'درویشان پور', 'm@yahoo.com', 'اقتصاد', 'فوق لیسانس', 'none.jpg'),
+(2, 'علی', 'سعیدی', 'm@yahoo.com', 'اقتصاد', 'فوق لیسانس', 'none.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_file`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_file` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) COLLATE utf8_persian_ci NOT NULL,
+  `text` mediumtext COLLATE utf8_persian_ci NOT NULL,
+  `date` text COLLATE utf8_persian_ci NOT NULL,
+  `pic` text COLLATE utf8_persian_ci NOT NULL,
+  `update_date` text COLLATE utf8_persian_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `category` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=39 ;
+
+--
+-- Dumping data for table `tbl_file`
+--
+
+INSERT INTO `tbl_file` (`id`, `title`, `text`, `date`, `pic`, `update_date`, `status`, `category`) VALUES
+(1, 'slkdfjlskd', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(2, 'کشیدن 345ممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(3, 'کشیدن قلیان dfg!dfg', 'چراب باید تفریح قلیانا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(5, 'کشیدن قلیان df gdgsdhtممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(15, 'ایای ایایایبا یبا', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(16, 'کشیدن قلیان ممنوع!زطظزرسفق6عه', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(17, 'کشیدن غخحهغکخمقغهصقممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(18, 'عغ5ف7ثخمکب.یائ', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(19, 'کشیدن قلیان قستفن!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(20, 'کشیدن سثقغممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(21, 'کشیدن سثقغسثقممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(22, 'کشیدن قلیان ممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(23, 'کشیدن قسثعغتممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(24, 'کشیدن قلیان ممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(25, 'قعقفت', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(26, 'کشیدن سثغقسقممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(27, 'کشیدن قلیان ممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(28, 'کشیدن قلیان ممنوع!ثغق', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(29, 'کشیدن قلیان ممنوع!ثشغق', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 2),
+(30, 'کشیدن قلیان ممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(31, 'کشیدن قلیان ممنوع!ثغق', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(32, 'کشیدن قلیان ممنوع!شصغف', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(33, 'کشیدن ثقسغممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(34, 'کشیدن قلیان ممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(35, 'کشیدن قلیان ممنوع!شصثف', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(36, 'شصف', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(37, 'کشیدن قلیان ممنوع!', 'چراب باید تفریح قلیان کسیدن هر چند که تفریحی نا سالم است را به زور قانون ممنوع کرد و برای عدم استفاده ی آن توسط جوانان فرهنگ سازینکرد ؟', '1393/03/31', 'none.jpg', '2', 1, 1),
+(38, 'aaaaaaaaaaaaaaa', '&lt;p&gt;متن پرونده...aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lt;/p&gt;\n', '۱۳۹۳/۳/۲۸', 'noone.jpg', '۱۳۹۳/۳/۲۸', 0, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_links`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_links` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) COLLATE utf8_persian_ci NOT NULL,
+  `text` longtext COLLATE utf8_persian_ci NOT NULL,
+  `pic` text COLLATE utf8_persian_ci NOT NULL,
+  `date` text COLLATE utf8_persian_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `visit` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tbl_links`
+--
+
+INSERT INTO `tbl_links` (`id`, `title`, `text`, `pic`, `date`, `status`, `visit`) VALUES
+(1, 'خبر خبر خبر - کلیک کنید تا ببینید', '&lt;p&gt;هیچ چیزی برای دیدن وجود نداشت - سر کاری بود&lt;/p&gt;n', '', '۱۳۹۳/۳/۲۹', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_page`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_page` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `txt` longtext COLLATE utf8_persian_ci NOT NULL,
+  `pic` text COLLATE utf8_persian_ci NOT NULL,
+  `type` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `tbl_page`
+--
+
+INSERT INTO `tbl_page` (`id`, `title`, `txt`, `pic`, `type`) VALUES
+(1, 'about', '&lt;p&gt;ما چه کسانی هستیم ؟&lt;/p&gt;\n\n&lt;p&gt;سایت ما چگونه شکل گرفت ؟&lt;/p&gt;\n\n&lt;p&gt;هدف ما از این سایت چیست ؟&lt;/p&gt;\n\n&lt;p&gt;ما توضیحاتی برای شما آماده کرده ایم&lt;/p&gt;\n', 'none.jpg', 1),
+(2, 'contact', '&lt;h2 style=&quot;font-style:italic;&quot;&gt;&amp;nbsp;شما چکونه می توانید با ما تماس بگیرید؟ ساده است.&lt;/h2&gt;\n\n&lt;p&gt;با ایمیل&lt;/p&gt;\n\n&lt;p&gt;با پیام&lt;/p&gt;\n\n&lt;p&gt;با نامه&lt;/p&gt;\n\n&lt;p&gt;با پر کردن فرم زیر&lt;/p&gt;\n\n&lt;p&gt;و با ...&lt;/p&gt;\n', 'none.jpg', 2),
+(3, 'قوانین و مقررات', '&lt;p&gt;شما باید قوانین و مقررات سایت را هنگام درج یک نظر رعایت فرمایید&lt;/p&gt;\n\n&lt;p&gt;ما نیز قوانین سختی وضع نمیکنیم&lt;/p&gt;\n\n&lt;p style=&quot;text-align: justify;&quot;&gt;شما مارا یاری نمایید تا بتوانیم&amp;nbsp;&lt;/p&gt;\n', 'none.jpg', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_register`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_register` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `family` varchar(150) COLLATE utf8_persian_ci NOT NULL,
+  `city` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `tell` text COLLATE utf8_persian_ci NOT NULL,
+  `mobile` text COLLATE utf8_persian_ci NOT NULL,
+  `email` text COLLATE utf8_persian_ci NOT NULL,
+  `birthday` text COLLATE utf8_persian_ci NOT NULL,
+  `reg_date` text COLLATE utf8_persian_ci NOT NULL,
+  `username` text COLLATE utf8_persian_ci NOT NULL,
+  `password` text COLLATE utf8_persian_ci NOT NULL,
+  `pic` text COLLATE utf8_persian_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tbl_register`
+--
+
+INSERT INTO `tbl_register` (`id`, `name`, `family`, `city`, `tell`, `mobile`, `email`, `birthday`, `reg_date`, `username`, `password`, `pic`, `status`) VALUES
+(1, 'ali', 'akbar', 'قزوین', '33560911', '09124816255', 'a.ghazanfari@gmail.com', '1364/05/22', '1393/03/30', 'aliakbar', '123', 'none.jpg', 0),
+(2, 'mahdi', 'akbar', 'تهران', '33560911', '09124816255', 'mahdi@gmail.com', '1364/05/22', '1393/03/30', 'aliakbar1', '123', 'none.jpg', 0),
+(3, 'saeed', 'akbar', 'قزوین', '33560911', '09124816255', 'saeed@gmail.com', '1364/05/22', '1393/03/30', 'aliakbar2', '123', 'none.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_settings`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) COLLATE utf8_persian_ci NOT NULL,
+  `desc` varchar(250) COLLATE utf8_persian_ci NOT NULL,
+  `copy_right` varchar(250) COLLATE utf8_persian_ci NOT NULL,
+  `logo` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_subfile`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_subfile` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_id` int(11) NOT NULL,
+  `expert_id` tinyint(4) NOT NULL,
+  `title` varchar(250) COLLATE utf8_persian_ci NOT NULL,
+  `text` mediumtext COLLATE utf8_persian_ci NOT NULL,
+  `date` text COLLATE utf8_persian_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=34 ;
+
+--
+-- Dumping data for table `tbl_subfile`
+--
+
+INSERT INTO `tbl_subfile` (`id`, `file_id`, `expert_id`, `title`, `text`, `date`, `status`) VALUES
+(9, 1, 1, 'بقفلا یبایب', 'gkjfbksdj fhkdsjfhsdigh j', '1393/03/30', 1),
+(25, 1, 1, 'بقفلا یبایب', 'gkjfbksdj fhkdsjfhsdigh j', '1393/03/30', 1),
+(27, 1, 1, 'بقفلا یبایب', 'gkjfbksdj fhkdsjfhsdigh j', '1393/03/30', 1),
+(28, 1, 1, 'بقفلا یبایب', 'gkjfbksdj fhkdsjfhsdigh j', '1393/03/30', 1),
+(29, 1, 1, 'بقفلا یبایب', 'gkjfbksdj fhkdsjfhsdigh j', '1393/03/30', 1),
+(32, 1, 1, 'بقفلا یبایب', 'gkjfbksdj fhkdsjfhsdigh j', '1393/03/30', 1),
+(33, 38, 6, 'cccccccccccccccccccccccccccccc', '&lt;p&gt;متن نظر...xcccccccccccccccccccccccccccc&lt;/p&gt;\n', '۱۳۹۳/۳/۲۸', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `family` varchar(150) COLLATE utf8_persian_ci NOT NULL,
+  `email` text COLLATE utf8_persian_ci NOT NULL,
+  `username` text COLLATE utf8_persian_ci NOT NULL,
+  `password` text COLLATE utf8_persian_ci NOT NULL,
+  `level` tinyint(4) NOT NULL,
+  `pic` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`id`, `name`, `family`, `email`, `username`, `password`, `level`, `pic`) VALUES
+(14, 'مدیر', 'وبسایت', 'admin2@admin.ir', 'admin2', 'c84258e9c39059a89ab77d846ddab909speiw#sb^&ewiq', 1, 'none.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_visit`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_visit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` text COLLATE utf8_persian_ci NOT NULL,
+  `date` text COLLATE utf8_persian_ci NOT NULL,
+  `page` text COLLATE utf8_persian_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_vote`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_vote` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_id` int(11) DEFAULT NULL,
+  `subfile_id` int(11) DEFAULT NULL,
+  `expert_id` int(11) DEFAULT NULL,
+  `answering` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci AUTO_INCREMENT=1 ;

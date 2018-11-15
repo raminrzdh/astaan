@@ -1,0 +1,66 @@
+
+
+/**
+ * Grid container
+
+
+/**
+ * Grid items
+ */
+#tiles li {
+
+
+          border-radius: 2px;
+     -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  display: none; /** Hide items initially to avoid a flicker effect **/
+  cursor: pointer;
+ 
+}
+
+#tiles li.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#tiles li img {
+//  display: block;
+}
+
+/**
+ * Grid item text
+ */
+#tiles li p {
+
+  
+}
+
+/**
+ * Progress bar for imagesLoaded
+ */
+.progress-bar {
+
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+ 
+  -webkit-transition: width 0.3s ease-out;
+     -moz-transition: width 0.3s ease-out;
+       -o-transition: width 0.3s ease-out;
+          transition: width 0.3s ease-out;
+}
+
+/**
+ * Placerholder css
+ */
+.wookmark-placeholder {
+          border-radius: 2px;
+     -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #eee;
+ 
+  z-index: -1;
+}
